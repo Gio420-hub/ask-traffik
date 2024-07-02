@@ -1,7 +1,10 @@
-<h2>My First Web Application : Ask Traffic</h2>
-
-<h4>May I know your name?</h4>
-<form action="/" method="post">
-   <p><input type="text" name="q"></p>
-   <p><input type="submit" value="Enter"></p>
-</form>
+from flask import Flask, render_template, request
+ 
+app = Flask(__name__)
+ 
+@app.route("/", methods=["GET","POST"])
+def index():
+   return(render_template("index.html"))
+ 
+if __name__ == "__main__":
+   app.run()
